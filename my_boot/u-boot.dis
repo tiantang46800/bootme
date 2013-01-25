@@ -1,0 +1,124 @@
+
+u-boot.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00034000 <_start>:
+   34000:	ea000006 	b	34020 <reset>
+   34004:	e1a00000 	nop			; (mov r0, r0)
+   34008:	e1a00000 	nop			; (mov r0, r0)
+   3400c:	e1a00000 	nop			; (mov r0, r0)
+   34010:	e1a00000 	nop			; (mov r0, r0)
+   34014:	e1a00000 	nop			; (mov r0, r0)
+   34018:	e1a00000 	nop			; (mov r0, r0)
+   3401c:	e1a00000 	nop			; (mov r0, r0)
+
+00034020 <reset>:
+   34020:	e10f0000 	mrs	r0, CPSR
+   34024:	e3c0001f 	bic	r0, r0, #31
+   34028:	e38000d3 	orr	r0, r0, #211	; 0xd3
+   3402c:	e129f000 	msr	CPSR_fc, r0
+   34030:	e59f0020 	ldr	r0, [pc, #32]	; 34058 <loop+0x4>
+   34034:	e3a01000 	mov	r1, #0
+   34038:	e5801000 	str	r1, [r0]
+   3403c:	e59f0018 	ldr	r0, [pc, #24]	; 3405c <loop+0x8>
+   34040:	e59f1018 	ldr	r1, [pc, #24]	; 34060 <loop+0xc>
+   34044:	e5801000 	str	r1, [r0]
+   34048:	e59f0014 	ldr	r0, [pc, #20]	; 34064 <loop+0x10>
+   3404c:	e3a010ff 	mov	r1, #255	; 0xff
+   34050:	e5801000 	str	r1, [r0]
+
+00034054 <loop>:
+   34054:	eafffffe 	b	34054 <loop>
+   34058:	ea200000 	b	834060 <loop+0x80000c>
+   3405c:	e03001c0 	eors	r0, r0, r0, asr #3
+   34060:	00001111 	andeq	r1, r0, r1, lsl r1
+   34064:	e03001c4 	eors	r0, r0, r4, asr #3
+
+Disassembly of section .ARM.attributes:
+
+00000000 <.ARM.attributes>:
+   0:	00001c41 	andeq	r1, r0, r1, asr #24
+   4:	61656100 	cmnvs	r5, r0, lsl #2
+   8:	01006962 	tsteq	r0, r2, ror #18
+   c:	00000012 	andeq	r0, r0, r2, lsl r0
+  10:	45543505 	ldrbmi	r3, [r4, #-1285]	; 0xfffffafb
+  14:	08040600 	stmdaeq	r4, {r9, sl}
+  18:	2c010901 	stccs	9, cr0, [r1], {1}
+  1c:	Address 0x0000001c is out of bounds.
+
+
+Disassembly of section .debug_line:
+
+00000000 <.debug_line>:
+   0:	00000046 	andeq	r0, r0, r6, asr #32
+   4:	001e0002 	andseq	r0, lr, r2
+   8:	01020000 	tsteq	r2, r0
+   c:	000d0efb 	strdeq	r0, [sp], -fp
+  10:	01010101 	tsteq	r1, r1, lsl #2
+  14:	01000000 	tsteq	r0, r0
+  18:	00010000 	andeq	r0, r1, r0
+  1c:	72617473 	rsbvc	r7, r1, #1929379840	; 0x73000000
+  20:	00532e74 	subseq	r2, r3, r4, ror lr
+  24:	00000000 	andeq	r0, r0, r0
+  28:	00020500 	andeq	r0, r2, r0, lsl #10
+  2c:	13000340 	movwne	r0, #832	; 0x340
+  30:	2f2f2f2f 	svccs	0x002f2f2f
+  34:	302f2f2f 	eorcc	r2, pc, pc, lsr #30
+  38:	31302f2f 	teqcc	r0, pc, lsr #30
+  3c:	2f302f2f 	svccs	0x00302f2f
+  40:	2f2f312f 	svccs	0x002f312f
+  44:	000a0230 	andeq	r0, sl, r0, lsr r2
+  48:	Address 0x00000048 is out of bounds.
+
+
+Disassembly of section .debug_info:
+
+00000000 <.debug_info>:
+   0:	0000005e 	andeq	r0, r0, lr, asr r0
+   4:	00000002 	andeq	r0, r0, r2
+   8:	01040000 	tsteq	r4, r0
+   c:	00000000 	andeq	r0, r0, r0
+  10:	00034000 	andeq	r4, r3, r0
+  14:	00034068 	andeq	r4, r3, r8, rrx
+  18:	72617473 	rsbvc	r7, r1, #1929379840	; 0x73000000
+  1c:	00532e74 	subseq	r2, r3, r4, ror lr
+  20:	6d6f682f 	stclvs	8, cr6, [pc, #-188]!	; ffffff6c <loop+0xfffcbf18>
+  24:	70612f65 	rsbvc	r2, r1, r5, ror #30
+  28:	2f656c70 	svccs	0x00656c70
+  2c:	2f756f79 	svccs	0x00756f79
+  30:	74737973 	ldrbtvc	r7, [r3], #-2419	; 0xfffff68d
+  34:	745f6d65 	ldrbvc	r6, [pc], #-3429	; 3c <_start-0x33fc4>
+  38:	736e6172 	cmnvc	lr, #-2147483620	; 0x8000001c
+  3c:	6e616c70 	mcrvs	12, 3, r6, cr1, cr0, {3}
+  40:	69746174 	ldmdbvs	r4!, {r2, r4, r5, r6, r8, sp, lr}^
+  44:	742f6e6f 	strtvc	r6, [pc], #-3695	; 4c <_start-0x33fb4>
+  48:	2f686365 	svccs	0x00686365
+  4c:	746f6f62 	strbtvc	r6, [pc], #-3938	; 54 <_start-0x33fac>
+  50:	554e4700 	strbpl	r4, [lr, #-1792]	; 0xfffff900
+  54:	20534120 	subscs	r4, r3, r0, lsr #2
+  58:	30322e32 	eorscc	r2, r2, r2, lsr lr
+  5c:	0031352e 	eorseq	r3, r1, lr, lsr #10
+  60:	Address 0x00000060 is out of bounds.
+
+
+Disassembly of section .debug_abbrev:
+
+00000000 <.debug_abbrev>:
+   0:	10001101 	andne	r1, r0, r1, lsl #2
+   4:	12011106 	andne	r1, r1, #-2147483647	; 0x80000001
+   8:	1b080301 	blne	200c14 <loop+0x1ccbc0>
+   c:	13082508 	movwne	r2, #34056	; 0x8508
+  10:	00000005 	andeq	r0, r0, r5
+
+Disassembly of section .debug_aranges:
+
+00000000 <.debug_aranges>:
+   0:	0000001c 	andeq	r0, r0, ip, lsl r0
+   4:	00000002 	andeq	r0, r0, r2
+   8:	00040000 	andeq	r0, r4, r0
+   c:	00000000 	andeq	r0, r0, r0
+  10:	00034000 	andeq	r4, r3, r0
+  14:	00000068 	andeq	r0, r0, r8, rrx
+	...
