@@ -1,0 +1,97 @@
+Binary file ./include/.nand.h.swp matches
+./include/nand.h:35:typedef struct mtd_info nand_info_t;
+./include/nand.h:38:extern nand_info_t nand_info[];
+./include/nand.h:40:static inline int nand_read(nand_info_t *info, loff_t ofs, size_t *len, u_char *buf)
+./include/nand.h:45:static inline int nand_write(nand_info_t *info, loff_t ofs, size_t *len, u_char *buf)
+./include/nand.h:50:static inline int nand_block_isbad(nand_info_t *info, loff_t ofs)
+./include/nand.h:55:static inline int nand_erase(nand_info_t *info, loff_t off, size_t size)
+./include/nand.h:112:int nand_read_skip_bad(nand_info_t *nand, loff_t offset, size_t *length,
+./include/nand.h:114:int nand_write_skip_bad(nand_info_t *nand, loff_t offset, size_t *length,
+./include/nand.h:116:int nand_erase_opts(nand_info_t *meminfo, const nand_erase_options_t *opts);
+./include/nand.h:122:int nand_lock( nand_info_t *meminfo, int tight );
+./include/nand.h:123:int nand_unlock( nand_info_t *meminfo, ulong start, ulong length );
+./include/nand.h:124:int nand_get_lock_status(nand_info_t *meminfo, loff_t offset);
+./tags:78569:arg_off_size	common/cmd_nand.c	/^arg_off_size(int argc, char *argv[], nand_info_t *nand, ulong *off, size_t *size)$/;"	f	file:
+./tags:83460:do_nand_status	common/cmd_nand.c	/^static void do_nand_status(nand_info_t *nand)$/;"	f	file:
+./tags:86140:get_len_incl_bad	drivers/mtd/nand/nand_util.c	/^static size_t get_len_incl_bad (nand_info_t *nand, loff_t offset,$/;"	f	file:
+./tags:88602:jffs2_fill_scan_buf	fs/jffs2/jffs2_nand_1pass.c	/^jffs2_fill_scan_buf(nand_info_t *nand, unsigned char *buf,$/;"	f	file:
+./tags:118025:nand	fs/jffs2/jffs2_nand_1pass.c	/^static nand_info_t *nand;$/;"	v	file:
+./tags:118034:nand_block_isbad	include/nand.h	/^static inline int nand_block_isbad(nand_info_t *info, loff_t ofs)$/;"	f
+./tags:118076:nand_dump	common/cmd_nand.c	/^static int nand_dump(nand_info_t *nand, ulong off, int only_oob)$/;"	f	file:
+./tags:118083:nand_erase	include/nand.h	/^static inline int nand_erase(nand_info_t *info, loff_t off, size_t size)$/;"	f
+./tags:118087:nand_erase_opts	drivers/mtd/nand/nand_util.c	/^int nand_erase_opts(nand_info_t *meminfo, const nand_erase_options_t *opts)$/;"	f
+./tags:118101:nand_info	drivers/mtd/nand/nand.c	/^nand_info_t nand_info[CONFIG_SYS_MAX_NAND_DEVICE];$/;"	v
+./tags:118102:nand_info_t	include/nand.h	/^typedef struct mtd_info nand_info_t;$/;"	t	typeref:struct:mtd_info
+./tags:118110:nand_load_image	common/cmd_nand.c	/^static int nand_load_image(cmd_tbl_t *cmdtp, nand_info_t *nand,$/;"	f	file:
+./tags:118124:nand_read	include/nand.h	/^static inline int nand_read(nand_info_t *info, loff_t ofs, size_t *len, u_char *buf)$/;"	f
+./tags:118146:nand_read_skip_bad	drivers/mtd/nand/nand_util.c	/^int nand_read_skip_bad(nand_info_t *nand, loff_t offset, size_t *length,$/;"	f
+./tags:118173:nand_write	include/nand.h	/^static inline int nand_write(nand_info_t *info, loff_t ofs, size_t *len, u_char *buf)$/;"	f
+./tags:118189:nand_write_skip_bad	drivers/mtd/nand/nand_util.c	/^int nand_write_skip_bad(nand_info_t *nand, loff_t offset, size_t *length,$/;"	f
+./drivers/mtd/nand/omap_gpmc.c:241:	    !nand_info[nand_curr_device].name) {
+./drivers/mtd/nand/omap_gpmc.c:246:	mtd = &nand_info[nand_curr_device];
+Binary file ./drivers/mtd/nand/nand_util.o matches
+Binary file ./drivers/mtd/nand/libnand.a matches
+Binary file ./drivers/mtd/nand/nand.o matches
+./drivers/mtd/nand/nand.c:34:nand_info_t nand_info[CONFIG_SYS_MAX_NAND_DEVICE];
+./drivers/mtd/nand/nand.c:85:		nand_init_chip(&nand_info[i], &nand_chip[i], base_address[i]);
+./drivers/mtd/nand/nand.c:86:		size += nand_info[i].size / 1024;
+./drivers/mtd/nand/mpc5121_nfc.c:604:	mtd = &nand_info[chip_nr++];
+./drivers/mtd/nand/nand_util.c:68:int nand_erase_opts(nand_info_t *meminfo, const nand_erase_options_t *opts)
+./drivers/mtd/nand/nand_util.c:435:static size_t get_len_incl_bad (nand_info_t *nand, loff_t offset,
+./drivers/mtd/nand/nand_util.c:472:int nand_write_skip_bad(nand_info_t *nand, loff_t offset, size_t *length,
+./drivers/mtd/nand/nand_util.c:551:int nand_read_skip_bad(nand_info_t *nand, loff_t offset, size_t *length,
+Binary file ./drivers/mtd/nand/.nand.c.swp matches
+./drivers/mtd/onenand/onenand_base.c:2249:* @param onenand_info		- onenand info structure
+./fs/yaffs2/yaffscfg.c:93:extern nand_info_t nand_info[];
+./fs/yaffs2/yaffscfg.c:117:	struct mtd_info *mtd = &nand_info[0];
+./fs/jffs2/jffs2_nand_1pass.c:26:static nand_info_t *nand;
+./fs/jffs2/jffs2_nand_1pass.c:763:jffs2_fill_scan_buf(nand_info_t *nand, unsigned char *buf,
+./fs/jffs2/jffs2_nand_1pass.c:797:	nand = nand_info + id->num;
+./fs/jffs2/jffs2_1pass.c:196:			if (nand_read(&nand_info[id->num], nand_cache_off,
+./System.map:917:2ffaedb8 B nand_info
+./nand_spl/nand_boot.c:232:	nand_info_t nand_info;
+./nand_spl/nand_boot.c:239:	nand_info.priv = &nand_chip;
+./nand_spl/nand_boot.c:245:		nand_chip.select_chip(&nand_info, 0);
+./nand_spl/nand_boot.c:250:	ret = nand_load(&nand_info, CONFIG_SYS_NAND_U_BOOT_OFFS, CONFIG_SYS_NAND_U_BOOT_SIZE,
+./nand_spl/nand_boot.c:254:	nand_load(&nand_info, CONFIG_ENV_OFFSET, CONFIG_ENV_SIZE,
+./nand_spl/nand_boot.c:258:	nand_load(&nand_info, CONFIG_ENV_OFFSET_REDUND, CONFIG_ENV_SIZE,
+./nand_spl/nand_boot.c:264:		nand_chip.select_chip(&nand_info, -1);
+Binary file ./u-boot matches
+./CHANGELOG:40217:    when storing the size in nand_info[].size, as nand_info[].size is an
+./CHANGELOG:52097:    Cleanup nand_info[] declaration.
+./CHANGELOG:52099:    The nand_info array is declared as extern in several .c files.
+./CHANGELOG:52855:    Cleanup nand_info[] declaration.
+./CHANGELOG:52857:    The nand_info array is declared as extern in several .c files.
+./u-boot.map:1227:                0x2ffaedb8                nand_info
+./common/cmd_jffs2.c:186:			*size = nand_info[num].size;
+./common/cmd_jffs2.c:261:	nand_info_t *nand;
+./common/cmd_jffs2.c:263:	nand = &nand_info[id->num];
+Binary file ./common/cmd_nand.o matches
+Binary file ./common/libcommon.a matches
+Binary file ./common/.env_nand.c.swp matches
+./common/env_nand.c:120:	blocksize = nand_info[0].erasesize;
+./common/env_nand.c:124:		if (nand_block_isbad(&nand_info[0], offset)) {
+./common/env_nand.c:128:			if (nand_write(&nand_info[0], offset, &len,
+./common/env_nand.c:158:		if (nand_erase_opts(&nand_info[0], &nand_erase_options))
+./common/env_nand.c:166:		if (nand_erase_opts(&nand_info[0], &nand_erase_options))
+./common/env_nand.c:196:	if (nand_erase_opts(&nand_info[0], &nand_erase_options))
+./common/env_nand.c:219:	blocksize = nand_info[0].erasesize;
+./common/env_nand.c:223:		if (nand_block_isbad(&nand_info[0], offset)) {
+./common/env_nand.c:227:			if (nand_read(&nand_info[0], offset, &len, char_ptr))
+./common/cmd_nand.c:29:static int nand_dump(nand_info_t *nand, ulong off, int only_oob)
+./common/cmd_nand.c:93:arg_off_size(int argc, char *argv[], nand_info_t *nand, ulong *off, size_t *size)
+./common/cmd_nand.c:120:			*nand = nand_info[idx];
+./common/cmd_nand.c:167:static void do_nand_status(nand_info_t *nand)
+./common/cmd_nand.c:198:	nand_info_t *nand = &nand_info[idx];
+./common/cmd_nand.c:213:	nand_info_t *nand;
+./common/cmd_nand.c:234:			if (nand_info[i].name)
+./common/cmd_nand.c:252:		if (dev < 0 || dev >= CONFIG_SYS_MAX_NAND_DEVICE || !nand_info[dev].name) {
+./common/cmd_nand.c:256:		printf("Device %d: %s", dev, nand_info[dev].name);
+./common/cmd_nand.c:264:		board_nand_select_device(nand_info[dev].priv, dev);
+./common/cmd_nand.c:280:	    !nand_info[nand_curr_device].name) {
+./common/cmd_nand.c:284:	nand = &nand_info[nand_curr_device];
+./common/cmd_nand.c:501:static int nand_load_image(cmd_tbl_t *cmdtp, nand_info_t *nand,
+./common/cmd_nand.c:620:			return nand_load_image(cmdtp, &nand_info[dev->id->num],
+./common/cmd_nand.c:664:	if (idx < 0 || idx >= CONFIG_SYS_MAX_NAND_DEVICE || !nand_info[idx].name) {
+./common/cmd_nand.c:671:	return nand_load_image(cmdtp, &nand_info[idx], offset, addr, argv[0]);
+Binary file ./common/env_nand.o matches

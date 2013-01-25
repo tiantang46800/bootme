@@ -1,0 +1,42 @@
+Binary file ./tools/env/.fw_env.c.swp matches
+./tools/env/fw_env.c:126:static char default_environment[] = {
+./tools/env/fw_env.c:932:			memcpy(environment.data, default_environment, sizeof default_environment);
+./tools/env/fw_env.c:978:			memcpy (environment.data, default_environment,
+./tools/env/fw_env.c:979:				sizeof default_environment);
+./tags:82675:default_environment	common/env_common.c	/^uchar default_environment[] = {$/;"	v
+./tags:82676:default_environment	tools/env/fw_env.c	/^static char default_environment[] = {$/;"	v	file:
+./System.map:762:2ffab3c4 D default_environment
+Binary file ./u-boot matches
+./CHANGELOG:14767:    env: kill off default_environment_size
+./CHANGELOG:14771:    So fix the spi flash code and kill off the default_environment_size in the
+./u-boot.map:1031:                0x2ffab3c4                default_environment
+Binary file ./common/env_common.o matches
+./common/env_nvram.c:60:extern uchar default_environment[];
+./common/env_nvram.c:147:		gd->env_addr  = (ulong)&default_environment[0];
+./common/env_sf.c:49:extern uchar default_environment[];
+./common/env_sf.c:151:	gd->env_addr = (ulong)&default_environment[0];
+./common/env_onenand.c:38:extern uchar default_environment[];
+./common/env_onenand.c:87:		memcpy(env_ptr->data, default_environment,
+./common/env_onenand.c:140:	gd->env_addr = (ulong) & default_environment[0];
+./common/env_dataflash.c:37:extern uchar default_environment[];
+./common/env_dataflash.c:92:			gd->env_addr  = (ulong)&default_environment[0];
+./common/env_nowhere.c:36:extern uchar default_environment[];
+./common/env_nowhere.c:55:	gd->env_addr  = (ulong)&default_environment[0];
+Binary file ./common/.env_common.c.swp matches
+./common/env_common.c:60:uchar default_environment[] = {
+./common/env_common.c:156:		c = default_environment[index];
+./common/env_common.c:170:		retval = ( default_environment[index] );
+./common/env_common.c:181:		return ( default_environment[index] );
+./common/env_common.c:204:		return (&default_environment[index]);
+./common/env_common.c:210:	if (sizeof(default_environment) > ENV_SIZE) {
+./common/env_common.c:216:	memcpy(env_ptr->data, default_environment,
+./common/env_common.c:217:	       sizeof(default_environment));
+./common/env_mgdisk.c:31:extern uchar default_environment[];
+./common/env_mgdisk.c:87:	gd->env_addr = (ulong) & default_environment[0];
+Binary file ./common/libcommon.a matches
+./common/env_flash.c:85:extern uchar default_environment[];
+./common/env_flash.c:102:	ulong addr_default = (ulong)&default_environment[0];
+./common/env_flash.c:254:	gd->env_addr  = (ulong)&default_environment[0];
+Binary file ./common/.env_nand.c.swp matches
+./common/env_nand.c:61:extern uchar default_environment[];
+./common/env_nand.c:102:	gd->env_addr  = (ulong)&default_environment[0];
